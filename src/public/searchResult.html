@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>搜索结果</title>
+    <script src="http://how2j.cn/study/js/jquery/2.0.0/jquery.min.js"></script>
+    <script src="./js/searchResult.js"></script>
+    <link rel="stylesheet" href="./layui/layui/css/layui.css">
+    <link rel="stylesheet" href="./css/searchResult.css">
+    <script src="./layui/layui/layui.js"></script>
+    <link rel="stylesheet" href="css/nav.css">
+</head>
+<body>
+<div class="layui-row">
+    <div class="layui-col-xs12 layui-col-sm12 layui-col-md12">
+        <nav>
+            <ul class="layui-nav" lay-filter="">
+                <li class="layui-nav-item"><a href="mainPage.html">首页</a></li>
+                <li class="layui-nav-item"><a href="allResources.html">全部课程</a></li>
+
+                <li class="layui-nav-item"><a href="personalCenter.html">个人中心</a></li>
+
+                <input type="text" name="title" required lay-verify="required" placeholder="请输入关键词" autocomplete="off"
+                       class="layui-input searchInput">
+                <button class="layui-btn layui-btn-radius layui-btn-primary searchBtn" onclick="jumpSearchResult()">搜索
+                </button>
+
+                <li class="layui-nav-item">
+                    <a href="javascript:;"><span class="loginInfo"><span class="onlineName"></span>登录</span></a>
+                    <dl class="layui-nav-child"> <!-- 二级菜单 -->
+                        <dd><a href="login.html" class="navLoginBtn">登录</a></dd>
+                        <dd><a href="register.html" class="navRegisterBtn">注册</a></dd>
+                        <dd><a href="" class="navLogoutBtn" onclick="logout()">注销</a></dd>
+                    </dl>
+                </li>
+            </ul>
+        </nav>
+    </div>
+</div>
+<div class="layui-row">
+    <div class="layui-col-xs12 layui-col-sm12 layui-col-md12">
+        <main>
+            <div id="searchResultContent">
+
+            </div>
+
+            <div style="text-align: center">
+                <ul id="searchResultPage"></ul>
+            </div>
+        </main>
+    </div>
+</div>
+</body>
+<script src="./layui/layui/layui.js"></script>
+<script>
+    layui.use('element', function () {
+        var element = layui.element;
+
+        element.on('nav', function (elem) {
+            layer.msg(elem.text());
+        });
+    });
+</script>
+</html>

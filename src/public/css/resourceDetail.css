@@ -1,0 +1,143 @@
+body{
+    background-color:#e0e5df;
+}
+
+main{
+    width: 80%;
+    margin: 30px 10%;
+}
+
+.information{
+    display: grid;
+    grid-template-columns: 55% 45%;
+}
+
+.information img{
+    width: 500px;
+    height: 300px;
+}
+
+.information>div{
+    display: grid;
+    grid-template-rows: 20% 20% 20% 40%;
+    height: 250px;
+    margin-top: 25px;
+}
+
+.information .resourceName{
+    font-size: 20pt;
+    font-family: "黑体";
+}
+
+.information .teacher{
+    color:dimgrey;
+}
+
+.information>div>button{
+    width: 100px;
+}
+
+.layui-card{
+    height: 110px;
+}
+
+.layui-card-body div{
+    margin-left: 40px;
+}
+
+.layui-card-body button{
+    margin-left: 80px;
+}
+
+.courseOverview,.courseOutline{
+    margin-top: 50px;
+}
+
+.courseOverview .title i,.courseOutline .title i{
+    color:#FFB800;
+    height: 20px;
+    width: 20px;
+}
+.courseOverview .title span,.courseOutline .title span{
+    font-family: "黑体";
+    font-size: 16pt;
+}
+
+.courseOverview .content,.courseOutline .content{
+    margin-top: 20px;
+    margin-left: 20px;
+}
+
+courseOutline .content{
+    color:dimgrey;
+}
+
+.layui-timeline i{
+    color:#FFB800;
+}
+
+.layui-timeline-title h3{
+    color:black;
+    font-weight: bold;
+}
+
+.layui-timeline-title p{
+    color: dimgrey;
+}
+
+.score{
+    color:dimgrey;
+}
+
+.score .scoreNum{
+    font-size: 26pt;
+    font-weight: bold;
+    font-family: "黑体";
+    color:#FFB800;
+}
+
+.scorePeople{
+    margin-left: 100px;
+}
+
+.collection::before{
+    content:"";
+    position: absolute;
+    width: 120px;
+    height: 50px;
+    background: #fff;
+    opacity: 0.5;
+}
+
+.wantRate{
+    margin-top: 30px;
+}
+
+.collection{
+    margin-top:-75px;
+    margin-left: 200px;
+    width: 120px;
+    height: 50px;
+}
+
+.collection i{
+    line-height: 50px;
+    font-size: 30px;
+    color:black;
+    margin-left: 10px;
+}
+
+.collection span{
+    line-height: 50px;
+    font-size: 16pt;
+    font-family: "黑体", serif;
+}
+
+.layui-card-header{
+    font-size: 16pt;
+}
+
+.layui-icon-close{
+    margin-left: 380px;
+    font-size: 27px;
+}

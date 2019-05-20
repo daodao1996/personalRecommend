@@ -1,0 +1,54 @@
+body{
+    overflow-x: hidden;
+}
+
+main>div{
+    width: 1348px;
+    height: 597px;
+    background-image: url("../img/bgPic.jpg");
+    background-size: 100%;
+}
+
+
+
+.container::before{
+    content:"";
+    position: absolute;
+    width: 1366px;
+    height: 597px;
+    background: #fff;
+    opacity: 0.5;
+}
+
+.container{
+    border:1px solid black ;
+    /*text-align: center;*/
+}
+
+.layui-form::before{
+    content: "";
+    position: absolute;
+    background: #f0f0f0;
+    opacity: 0.7;
+    width: 400px;
+    height: 270px;
+    margin-top: -20px;
+}
+
+.layui-form{
+    margin-left: 36%;
+    margin-top:10%;
+    width: 500px;
+}
+
+.loginTitle{
+    font-size: 18pt;
+    margin-left: 18%;
+}
+
+.registerLink{
+    display: block;
+    font-size: 14pt;
+    margin-top: 18px;
+    margin-left: 80px;
+}

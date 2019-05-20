@@ -1,0 +1,74 @@
+body {
+    /*background-color: #e0e5df;*/
+}
+
+.carousel {
+    margin: auto;
+    margin-top: 10px;
+}
+
+
+.carousel > div div {
+    text-align: center;
+}
+
+.hotResource {
+    margin-left: 50px;
+    margin-right: 50px;
+    margin-top: 20px;
+}
+
+.hotResource .title {
+    font-size: 20pt;
+    font-family: "黑体", serif;
+}
+
+.hotResource .content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin: 50px 50px;
+    height: 700px;
+}
+
+.hotResource .content > div {
+    border: 1px solid #eeece7;
+    color: #eeece7;
+    height: 200px;
+    display: grid;
+    grid-template-columns: 30% 70%;
+}
+
+.hotResource .content > div > a > img {
+    display: inline-block;
+    width: 300px;
+    height: 200px;
+}
+
+.hotResource .content div .resourceName {
+    color: black;
+    font-size: 18px;
+    margin-top: 10px;
+}
+
+.hotResource .content .teacher {
+    color: dimgrey;
+    margin-top: 10px;
+}
+
+.hotResource .content .introduction {
+    color: dimgrey;
+    margin-top: 10px;
+}
+
+.content .info {
+    height: 150px;
+    margin-top: 18px;
+    display: grid;
+    grid-template-rows: 33.3% 33.3% 33.3%;
+}
+
+.hotResource .introduction {
+    width: 750px;
+
+}

@@ -1,0 +1,54 @@
+body{
+    /*background-color: #e0e5df;*/
+}
+
+.layui-tab{
+    background-color: white;
+    margin: 50px 100px;
+}
+
+#recommendContent,#myCollectionContent{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin:40px 50px;
+    height: 440px;
+}
+#recommendContent>div,#myCollectionContent>div{
+    border: 1px solid #eeece7;
+    color:#eeece7;
+    height: 200px;
+    display: grid;
+    grid-template-columns: 30% 70%;
+}
+
+#recommendContent>div>a>img,#myCollectionContent>div>a>img{
+    display: inline-block;
+    width: 300px;
+    height: 200px;
+}
+#recommendContent div .resourceName,#myCollectionContent div .resourceName{
+    color:black;
+    font-size: 18px;
+    margin-top: 10px;
+}
+
+#recommendContent .teacher,#myCollectionContent .teacher{
+    color: dimgrey;
+    margin-top: 10px;
+}
+
+#recommendContent .introduction,#myCollectionContent .introduction{
+    color: dimgrey;
+    margin-top: 10px;
+}
+#recommendContent .info,#myCollectionContent .info{
+    height: 150px;
+    margin-top: 18px;
+    margin-left: 40px;
+    display: grid;
+    grid-template-rows: 30% 25% 45%;
+}
+#recommendContent .introduction,#myCollectionContent .introduction{
+    width: 630px;
+}

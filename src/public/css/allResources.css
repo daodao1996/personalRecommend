@@ -1,0 +1,45 @@
+#allResourcesContent{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin:40px 80px;
+    height: 700px;
+    width: 1200px;
+}
+#allResourcesContent>div{
+    border: 1px solid #eeece7;
+    color:#eeece7;
+    height: 200px;
+    display: grid;
+    grid-template-columns: 30% 70%;
+}
+
+#allResourcesContent>div>a>img{
+    display: inline-block;
+    width: 300px;
+    height: 200px;
+}
+#allResourcesContent div .resourceName{
+    color:black;
+    font-size: 18px;
+    margin-top: 10px;
+}
+
+#allResourcesContent .teacher{
+    color: dimgrey;
+    margin-top: 10px;
+}
+
+#allResourcesContent .introduction{
+    color: dimgrey;
+    margin-top: 10px;
+}
+#allResourcesContent .info{
+    height: 150px;
+    margin-top: 18px;
+    display: grid;
+    grid-template-rows: 33.3% 33.3% 33.3%;
+}
+#allResourcesContent .introduction{
+    width: 750px;
+}

@@ -1,0 +1,62 @@
+body{
+    overflow-x: hidden;
+}
+
+main>div{
+    width: 1348px;
+    height: 597px;
+    background-image: url("../img/bgPic.jpg");
+    background-size: 100%;
+}
+
+
+.container::before{
+    content:"";
+    position: absolute;
+    width: 1366px;
+    height: 597px;
+    background: #fff;
+    opacity: 0.5;
+}
+
+.container{
+    border:1px solid black ;
+    /*text-align: center;*/
+}
+
+.layui-form::before{
+    content: "";
+    position: absolute;
+    background: #f0f0f0;
+    opacity: 0.7;
+    width: 500px;
+    height: 550px;
+    margin-top: -20px;
+}
+
+.layui-form{
+    margin-left: 33%;
+    margin-top:3%;
+    width: 500px;
+}
+
+.register{
+    margin-left: 40%;
+}
+
+.getCode,.securityCode{
+    display: inline-block;
+}
+
+.getCode{
+    margin-left: 40px;
+    width: 150px;
+}
+
+.registerTitle{
+    font-size: 18pt;
+    margin-left: 24%;
+}
+.submit{
+    width: 100px;
+}

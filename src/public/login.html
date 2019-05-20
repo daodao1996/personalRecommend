@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>登录</title>
+    <script src="http://how2j.cn/study/js/jquery/2.0.0/jquery.min.js"></script>
+    <script src="./js/login.js"></script>
+    <link rel="stylesheet" href="./layui/layui/css/layui.css">
+    <link rel="stylesheet" href="css/login.css">
+    <link rel="stylesheet" href="css/nav.css">
+</head>
+<body>
+<div class="layui-row">
+    <div class="layui-col-xs12 layui-col-sm12 layui-col-md12">
+        <nav>
+            <ul class="layui-nav" lay-filter="">
+                <li class="layui-nav-item"><a href="mainPage.html">首页</a></li>
+                <li class="layui-nav-item"><a href="allResources.html">全部课程</a></li>
+
+                <li class="layui-nav-item"><a href="personalCenter.html">个人中心</a></li>
+
+                <input type="text" name="title" required lay-verify="required" placeholder="请输入关键词" autocomplete="off"
+                       class="layui-input searchInput">
+                <button class="layui-btn layui-btn-radius layui-btn-primary searchBtn" onclick="jumpSearchResult()">搜索
+                </button>
+
+                <li class="layui-nav-item">
+                    <a href="javascript:;"><span class="loginInfo"><span class="onlineName"></span>登录</span></a>
+                    <dl class="layui-nav-child"> <!-- 二级菜单 -->
+                        <dd><a href="login.html" class="navLoginBtn">登录</a></dd>
+                        <dd><a href="register.html" class="navRegisterBtn">注册</a></dd>
+                        <dd><a href="" class="navLogoutBtn" onclick="logout()">注销</a></dd>
+                    </dl>
+                </li>
+            </ul>
+        </nav>
+    </div>
+</div>
+
+<main>
+    <div class="container">
+        <form class="layui-form" action="">
+            <label class="layui-form-label"></label>
+            <div class="layui-input-block">
+                <p class="loginTitle">登录</p>
+            </div>
+
+            <label class="layui-form-label" style="margin-top: 15px;">用户名</label>
+            <div class="layui-input-block" style="margin-top: 15px;">
+                <input type="text" name="title" required lay-verify="required" placeholder="请输入用户名" autocomplete="off"
+                       class="layui-input userName" style="width: 182px;">
+            </div>
+            <br>
+            <label class="layui-form-label">密码</label>
+            <div class="layui-input-inline">
+                <input type="password" name="password" required lay-verify="required" placeholder="请输入密码"
+                       autocomplete="off" class="layui-input password">
+            </div>
+            <br>
+            <br>
+            <div class="layui-form-item">
+                <div class="layui-input-block">
+                    <input type="button" class="layui-btn submit" onclick="login()" value="立即登录"/>
+                    <button type="reset" class="layui-btn layui-btn-primary">重置</button>
+                </div>
+            </div>
+
+            <label class="layui-form-label"></label>
+            <div class="layui-input-block">
+                <a class="registerLink" href="register.html">还没有账号？点此注册</a>
+            </div>
+        </form>
+    </div>
+</main>
+</body>
+<script src="./layui/layui/layui.js"></script>
+
+<script>
+    layui.use('form', function () {
+
+    });
+</script>
+</html>
