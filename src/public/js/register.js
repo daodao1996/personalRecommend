@@ -77,7 +77,7 @@ function judgeFormat(data) {
         alert("用户名只能由汉字、字母、数字、点和下划线组成");
         return false;
     } else {
-        if (!judgeUsernameUnique(data.userName)) {
+        if (judgeUsernameUnique(data.userName) === false) {
             alert("用户名已被占用");
         } else {
             if (data.password !== $(".passwordEnter").val()) {
@@ -117,6 +117,7 @@ function emailVerification() {
 }
 
 function judgeUsernameUnique(username) {
+    let flag = true;
     $.ajax({
         type: "POST",
         url: BASE_URL + "/register.html/judgeUsernameUnique",
@@ -128,10 +129,12 @@ function judgeUsernameUnique(username) {
         crossDomain: true,
         success: function (result) {
             if (result === true) {
-                return true;
+                flag = true;
             } else {
-                return false;
+                flag = false;
             }
         }
     });
+    console.log(typeof flag);
+    return flag;
 }

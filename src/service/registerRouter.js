@@ -17,7 +17,7 @@ router.post('/sendCode', urlencodedParser, function(req, res) {
 router.post('/register', urlencodedParser, function(req, res) {
     let values = req.body;
     console.log(values);
-    let sql = `insert into user values('${values.userID}','${values.userName}','${values.email}','${values.interest}','');`;
+    let sql = `insert into user values('${values.userID}','${values.userName}','${values.password}','${values.email}','${values.interest}','');`;
     connection.query(sql, function(error, results, fields) {
         if (error) throw error;
         res.send(true);

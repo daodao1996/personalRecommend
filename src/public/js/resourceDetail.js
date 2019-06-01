@@ -49,54 +49,66 @@ function changeCollectionStatement() {
 
 function judgeIfUserCollection() {
     let ans = true;
-    $.ajax({
-        type: 'POST',
-        url: BASE_URL + "/resourceDetail.html/judgeIfUserCollection",
-        data: {
-            resourceID: window.location.search.split("=")[1],
-            userID: sessionStorage.getItem("onlineUserID")
-        },
-        datatype: 'JSON',
-        async: false,
-        crossDomain: true,
-        success: function (result) {
-            ans = result;
-        }
-    });
-    return ans;
+    if(!sessionStorage.getItem("onlineUserID")){
+        return false;
+    }else{
+        $.ajax({
+            type: 'POST',
+            url: BASE_URL + "/resourceDetail.html/judgeIfUserCollection",
+            data: {
+                resourceID: window.location.search.split("=")[1],
+                userID: sessionStorage.getItem("onlineUserID")
+            },
+            datatype: 'JSON',
+            async: false,
+            crossDomain: true,
+            success: function (result) {
+                ans = result;
+            }
+        });
+        return ans;
+    }
 }
 
 function collectionResource() {
-    $.ajax({
-        type: 'POST',
-        url: BASE_URL + "/resourceDetail.html/collectionResource",
-        data: {
-            resourceID: window.location.search.split("=")[1],
-            userID: sessionStorage.getItem("onlineUserID")
-        },
-        datatype: 'JSON',
-        crossDomain: true,
-        success: function (result) {
-
-        }
-    });
+    if(sessionStorage.getItem("onlineUserID")){
+        $.ajax({
+            type: 'POST',
+            url: BASE_URL + "/resourceDetail.html/collectionResource",
+            data: {
+                resourceID: window.location.search.split("=")[1],
+                userID: sessionStorage.getItem("onlineUserID")
+            },
+            datatype: 'JSON',
+            crossDomain: true,
+            success: function (result) {
+                alert("收藏成功");
+            }
+        });
+    }else {
+        alert("请先登录");
+    }
 }
 
 
 function cancelCollectionResource() {
-    $.ajax({
-        type: 'POST',
-        url: BASE_URL + "/resourceDetail.html/cancelCollectionResource",
-        data: {
-            resourceID: window.location.search.split("=")[1],
-            userID: sessionStorage.getItem("onlineUserID")
-        },
-        datatype: 'JSON',
-        crossDomain: true,
-        success: function (result) {
-
-        }
-    });
+    if(sessionStorage.getItem("onlineUserID")) {
+        $.ajax({
+            type: 'POST',
+            url: BASE_URL + "/resourceDetail.html/cancelCollectionResource",
+            data: {
+                resourceID: window.location.search.split("=")[1],
+                userID: sessionStorage.getItem("onlineUserID")
+            },
+            datatype: 'JSON',
+            crossDomain: true,
+            success: function (result) {
+                alert("取消收藏成功");
+            }
+        });
+    }else{
+        alert("请先登录");
+    }
 }
 
 function jumpSearchResult() {

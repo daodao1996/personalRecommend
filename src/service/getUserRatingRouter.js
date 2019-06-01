@@ -18,40 +18,44 @@ router.post('/', urlencodedParser, function(req, res) {
           let currentUserInfo ={};
           let currentUser = [];
           let otherUsers = {};
-          comprehensiveResult[0].forEach(itemCom => {
-              let itemScore = scoreResults.filter(item => item.userID===itemCom.userID)[0];
-              if(itemCom.userID === values.userID){
-                    currentUserInfo = itemScore;
-                    for(let iter in itemScore){
-                        if(typeof itemScore[iter] !== "string"){
-                            let nowNumber=getComplexScore(itemScore[iter],itemCom[iter]);
-                            currentUserInfo[iter]=nowNumber;
-                            currentUser.push(nowNumber);
-                        }
-                    }
-              }else{
-                  let sArr = [];
-                  for(let iter in itemScore){
-                      if(typeof itemScore[iter] !== "string"){
-                          sArr.push(getComplexScore(itemScore[iter],itemCom[iter]));
-                      }
-                  }
-                  otherUsers[itemScore.userID] = sArr;
-              }
-          });
+          dealScoreAndComprehensivescore(currentUserInfo,currentUser,otherUsers,scoreResults,comprehensiveResult,values.userID);
           console.log(currentUserInfo);
-          // console.log(otherUsers);
-        let neighbors = searchNeighbors(currentUser,otherUsers);
-        console.log(neighbors);
-        if(Object.keys(neighbors).length >= 4){
-            getRecommend.getInterestDegree(neighbors,res,currentUserInfo);
-            return 0;
-        }else{
+          let neighbors = searchNeighbors(currentUser,otherUsers);
+          console.log(neighbors);
+          if(Object.keys(neighbors).length >= 5){
+              getRecommend.getInterestDegree(neighbors,res,currentUserInfo);
+              return 0;
+          }else{
             recommendBasedInterest(values.userID,res);
-        }
+          }
       });
   });
 });
+
+
+function dealScoreAndComprehensivescore(currentUserInfo,currentUser,otherUsers,scoreResults,comprehensiveResult,nowUserID) {
+    comprehensiveResult[0].forEach(itemCom => {
+        let itemScore = scoreResults.filter(item => item.userID===itemCom.userID)[0];
+        if(itemCom.userID === nowUserID){
+            currentUserInfo = itemScore;
+            for(let iter in itemScore){
+                if(typeof itemScore[iter] !== "string"){
+                    let nowNumber=getComplexScore(itemScore[iter],itemCom[iter]);
+                    currentUserInfo[iter]=nowNumber;
+                    currentUser.push(nowNumber);
+                }
+            }
+        }else{
+            let sArr = [];
+            for(let iter in itemScore){
+                if(typeof itemScore[iter] !== "string"){
+                    sArr.push(getComplexScore(itemScore[iter],itemCom[iter]));
+                }
+            }
+            otherUsers[itemScore.userID] = sArr;
+        }
+    });
+}
 
 function recommendBasedInterest(userID,res){
     if(userID){

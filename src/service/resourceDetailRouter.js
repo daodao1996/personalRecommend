@@ -162,6 +162,8 @@ router.post('/judgeIfUserCollection', urlencodedParser, function (req, res) {
             }
 
         });
+    }else{
+        res.send(false);
     }
 });
 

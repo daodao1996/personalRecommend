@@ -36,7 +36,7 @@ function getRecommendCourse(allCourses,currentUserScore) {
     });
     let result = [];
     sortedCourse.forEach(item => {
-        if(currentUserScore[item] < 5){
+        if(currentUserScore[item] < 9){
             result.push(item);
         }
     });
